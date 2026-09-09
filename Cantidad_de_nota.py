@@ -1,40 +1,11 @@
-grades = []
-classification = []
-
-
-def addGrade(grade):
-    grades.append(grade)
-
-    resultado = calcular_aprendizaje(grade)
-    classification.append(resultado)
-
-
-def calcular_aprendizaje(grade):
-
-    if grade >= 90:
-        return "Avanzado"
-
-    elif grade >= 80:
-        return "Satisfactorio"
-
-    elif grade >= 70:
-        return "Fundamental"
-
-    else:
-        return "Aprendizaje inicial"
-
-
-def showGrades():
-
-    for i in range(len(grades)):
-        print(f"Nota: {grades[i]} - Clasificación: {classification[i]}")
+import Funciones_de_cantidad_de_nota 
 
 
 while True:
 
     grade = float(input("Ingrese su nota: "))
 
-    addGrade(grade)
+    Funciones_de_cantidad_de_nota.addGrade(grade)
 
     answer = input("¿Desea ingresar otra nota? (s/n): ")
 
@@ -45,4 +16,4 @@ while True:
 
 
 print("\n--- RESULTADO FINAL ---")
-showGrades()
+Funciones_de_cantidad_de_nota.showGrades()
